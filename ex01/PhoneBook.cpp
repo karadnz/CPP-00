@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:49:15 by mkaraden          #+#    #+#             */
-/*   Updated: 2023/11/27 18:09:28 by mkaraden         ###   ########.fr       */
+/*   Updated: 2023/11/29 21:55:05 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,23 @@ void	PhoneBook::loop()
 	
 	while(1)
 	{
-		//system("clear");
 		this->_printMenu();
 		switch (this->_getInput())
 		{
 		case PhoneBook::ADD:
-			//std::cout << " selected ADD" << std::endl;
 			system("clear");
 			this->_add();
 			break;
 		case PhoneBook::SEARCH:
-			//std::cout << "selected SEARCH" << std::endl;
 			system("clear");
 			this->_search();
 			break;
 		case PhoneBook::EXIT:
-			//std::cout << "selected EXIT" << std::endl;
 			system("clear");
 			this->_exit();
 			break;
 		
 		default:
-			//std::cout << "selected DEFAULT" << std::endl;
 			system("clear");
 			break;
 		}

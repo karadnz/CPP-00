@@ -6,7 +6,7 @@
 #    By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 19:33:17 by mkaraden          #+#    #+#              #
-#    Updated: 2023/07/30 14:36:19 by mkaraden         ###   ########.fr        #
+#    Updated: 2023/11/29 22:03:42 by mkaraden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,33 +17,27 @@ CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 
-#Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
 
 .PHONY: all clean re
 
 all: $(NAME)
 
 test:
-	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
+	@printf "	- Compiling $(NAME)... \n"
 	@ $(CC)  $(SRCS) -o $(NAME)
-	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
+	@printf "    - Executable ready.\n"
 
 $(NAME): $(SRCS)
-	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
+	@printf " 	- Compiling $(NAME)... \n"
 	@ $(CC) $(FLAGS) $(SRCS) -o $(NAME)
-	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
+	@printf "    - Executable ready.\n"
 
 clean:
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
+	@printf "    - Executable removed.\n"
 
 fclean:
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
+	@printf "    - Executable removed.\n"
 
 re: clean all

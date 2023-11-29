@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 15:37:54 by mkaraden          #+#    #+#             */
-/*   Updated: 2023/11/27 18:31:13 by mkaraden         ###   ########.fr       */
+/*   Updated: 2023/11/29 21:56:07 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,8 @@ void	Account::displayStatus( void ) const
 	
 }
 
-void Account::_displayTimestamp(){
+void Account::_displayTimestamp()
+{
     std::time_t result = std::time(NULL);
 
     std::cout << std::setfill('0') <<"[" << 1900 + std::localtime(&result)->tm_year

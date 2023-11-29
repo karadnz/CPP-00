@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:13:14 by mkaraden          #+#    #+#             */
-/*   Updated: 2023/11/27 17:16:05 by mkaraden         ###   ########.fr       */
+/*   Updated: 2023/11/29 20:41:41 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Contact::Contact(/* args */)
 {
-	this->_isInited = false;
+	//this->_isInited = false;
 	
 }
 
@@ -90,7 +90,7 @@ void    Contact::init(void)
     this->_phoneNumber = this->_getInput("Phone Number: ");
     this->_darkestSecret = this->_getInput("Darkest Secret: ");
 
-	this->_isInited = true;
+	//this->_isInited = true;
 	
     std::cout << std::endl;
 }
