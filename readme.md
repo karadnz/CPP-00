@@ -1,5 +1,7 @@
 ex00
-
+namespace
+string
+&
 
 
 ex01

@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 18:49:15 by mkaraden          #+#    #+#             */
-/*   Updated: 2023/07/30 15:26:00 by mkaraden         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:09:28 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 PhoneBook::PhoneBook()
 {
 	this->_index = -1;
-	this->_count = 0;
-	
+	this->_count = 0;	
 }
 
 PhoneBook::~PhoneBook()
@@ -34,27 +33,25 @@ void	PhoneBook::loop()
 		this->_printMenu();
 		switch (this->_getInput())
 		{
-			
 		case PhoneBook::ADD:
-			std::cout << " selected ADD" << std::endl;
+			//std::cout << " selected ADD" << std::endl;
 			system("clear");
 			this->_add();
 			break;
 		case PhoneBook::SEARCH:
-			std::cout << "selected SEARCH" << std::endl;
+			//std::cout << "selected SEARCH" << std::endl;
 			system("clear");
 			this->_search();
 			break;
 		case PhoneBook::EXIT:
-			std::cout << "selected EXIT" << std::endl;
+			//std::cout << "selected EXIT" << std::endl;
 			system("clear");
 			this->_exit();
 			break;
 		
 		default:
-			std::cout << "selected DEFAULT" << std::endl;
+			//std::cout << "selected DEFAULT" << std::endl;
 			system("clear");
-			//this->_display();
 			break;
 		}
 	}
@@ -93,14 +90,10 @@ void	PhoneBook::_display() const
     std::cout << "|" << std::endl;
 	for (int i = 0; i < this->_count; i++)
 	{
-		
-		
 		std::cout << "|" << std::setw(10) << i << std::flush;
-		this->_contacts[i].view();
+		this->_contacts[i].displayFormatted();
 	}
 	std::cin.ignore();
-	
-	
 }
 
 int	PhoneBook::_getInput()
@@ -132,8 +125,6 @@ void	PhoneBook::_printMenu()
 	<< std::endl;
 }
 
-
-
 int     PhoneBook::_getIndex() const
 {
     int     input = -1;
@@ -143,18 +134,15 @@ int     PhoneBook::_getIndex() const
         std::cout << "contact index: " << std::flush;
         std::cin >> input;
 		
-		valid = (input == -1) ? true : false;
-		
-        if (std::cin.good() && (input >= 0 && input < this->_count))
+		//-1 to exit
+        if (std::cin.good() && ( (input >= 0 && input < this->_count)  || input == -1) )
 		{
-            //everything went well, we'll get out of the loop and return the value
             valid = true;
         }
 		else
 		{
-            //something went wrong, we reset the buffer's state to good
             std::cin.clear();
-            //and empty it
+            //ignore until newline or max limit
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
             std::cout << "Invalid index; please re-enter." << std::endl;
         }

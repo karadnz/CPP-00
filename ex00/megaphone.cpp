@@ -6,34 +6,36 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 14:20:22 by mkaraden          #+#    #+#             */
-/*   Updated: 2023/07/27 15:05:41 by mkaraden         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:49:05 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
-void	upper(char *str);
-
-int main(int ac, char **av)
+void upper(std::string& str)
 {
-	if (ac == 1)
-		std::cout<< "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
+    for (size_t i = 0; i < str.length(); i++)
 	{
-		for (size_t i = 1; i < (size_t)ac; i++)
-		{
-			upper(av[i]);
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+        str[i] = toupper(str[i]);
+    }
 }
 
-void	upper(char *str)
+int main(int argc, char** argv)
 {
-	for (size_t i = 0; i < std::strlen(str); i++)
+    if (argc == 1)
 	{
-		std::cout << (char)std::toupper(str[i]);
-	}
-	
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+        return 0;
+    }
+
+    for (int i = 1; i < argc; i++)
+	{
+        std::string str = argv[i];
+        upper(str);
+		std::cout << str;
+    }
+	std::cout << std::endl;
+
+    return 0;
 }

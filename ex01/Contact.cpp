@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:13:14 by mkaraden          #+#    #+#             */
-/*   Updated: 2023/07/30 14:36:06 by mkaraden         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:16:05 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string Contact::_getShort(std::string str) const
 		return str;
 	return (str.substr(0, 9) + ".");
 }
-void    Contact::view() const
+void    Contact::displayFormatted() const
 {
     if (this->_firstName.empty() || this->_lastName.empty() || this->_nickname.empty())
         return ;
@@ -57,14 +57,14 @@ void    Contact::view() const
     std::cout << "|" << std::endl;
 }
 
-std::string Contact::_getInput(std::string str) const
+std::string Contact::_getInput(std::string msg) const
 {
     std::string input = "";
     bool        valid = false;
 	
     do
     {
-        std::cout << str << std::flush;
+        std::cout << msg << std::flush;
         std::getline(std::cin, input);
 		
         if (std::cin.good() && !input.empty())

@@ -6,7 +6,7 @@
 /*   By: mkaraden <mkaraden@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 15:37:54 by mkaraden          #+#    #+#             */
-/*   Updated: 2023/07/30 18:36:51 by mkaraden         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:31:13 by mkaraden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	Account::getNbWithdrawals( void )
 {
 	return (_totalNbWithdrawals);	
 }
+
 void	Account::displayAccountsInfos( void )
 {
 	_displayTimestamp();
